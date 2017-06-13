@@ -14,7 +14,6 @@ public class timer : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	
 		text = GetComponent <Text> ();
 		restart = false;
 	}

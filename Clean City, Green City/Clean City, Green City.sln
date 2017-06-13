@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{BC4DF5FB-00DF-5119-3159-EA3E49A4E66A}") = "Clean City, Green City", "Assembly-CSharp.csproj", "{9F5AC989-3BD0-D071-FB39-97D650F6C170}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean City, Green City", "Assembly-CSharp.csproj", "{9F5AC989-3BD0-D071-FB39-97D650F6C170}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
