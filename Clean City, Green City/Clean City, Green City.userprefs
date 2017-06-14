@@ -1,6 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StrikeManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/StrikeManager.cs" Line="29" Column="33" />
+      <File FileName="Assets/Scripts/timer.cs" Line="16" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> 68f08838a0f54ceeaa1b6c49a6673b5f4da5901f
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

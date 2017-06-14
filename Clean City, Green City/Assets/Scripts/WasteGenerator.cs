@@ -16,6 +16,7 @@ public class WasteGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+
 		StartCoroutine (Generate ());
 
 	}
@@ -27,6 +28,8 @@ public class WasteGenerator : MonoBehaviour {
 			GameObject wasteType = waste [n];
 			if (n == 0) {
 				// compost
+				wasteType.GetComponent<SpriteRenderer> ();
+
 			} else if (n == 1) {
 				// recyclable
 			} else if (n == 2) {
