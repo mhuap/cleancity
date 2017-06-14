@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class timer : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class timer : MonoBehaviour
 	public float timeLeft = 30.0f;
 	public GameObject gameOverText;
 	public GameObject restartText;
-	public bool restart;
+	private bool restart;
 	Text text;
 
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class timer : MonoBehaviour
 
 		if (restart) {
 			if (Input.GetKeyDown (KeyCode.R)) {
-				Application.LoadLevel (Application.loadedLevel);
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 			}
 		}
 	}

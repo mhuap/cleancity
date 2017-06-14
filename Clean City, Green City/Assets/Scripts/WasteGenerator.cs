@@ -7,6 +7,9 @@ public class WasteGenerator : MonoBehaviour {
 	public float waitTime = 5f;
 	public Vector3[] coords;
 	public GameObject[] waste;
+	public Sprite[] recycleSprites;
+	public Sprite[] wasteSprites;
+	public Sprite[] compostSprites;
 	public int size = 14;
 	public GameObject gameOverText;
 
@@ -20,7 +23,15 @@ public class WasteGenerator : MonoBehaviour {
 	IEnumerator Generate(){
 		while (count > 0 && !gameOverText.activeInHierarchy) {
 			Vector3 position = coords [Random.Range (0, size)];
-			GameObject wasteType = waste [Random.Range (0, 3)];
+			int n = Random.Range (0, 3);
+			GameObject wasteType = waste [n];
+			if (n == 0) {
+				// compost
+			} else if (n == 1) {
+				// recyclable
+			} else if (n == 2) {
+				// waste
+			}
 			yield return new WaitForSeconds (waitTime);
 			Instantiate (wasteType, position, Quaternion.identity);
 			count--;
