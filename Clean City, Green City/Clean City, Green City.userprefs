@@ -1,16 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StrikeManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WasteGenerator.cs">
     <Files>
-      <File FileName="Assets/Scripts/StrikeManager.cs" Line="29" Column="33" />
-      <File FileName="Assets/Scripts/timer.cs" Line="16" Column="3" />
+      <File FileName="Assets/Scripts/wasteComponent.cs" Line="6" Column="21" />
+      <File FileName="Assets/Scripts/WasteGenerator.cs" Line="67" Column="23" />
+      <File FileName="Assets/Scripts/deleteWaste.cs" Line="26" Column="40" />
+      <File FileName="Assets/Scripts/Waste.cs" Line="7" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> 68f08838a0f54ceeaa1b6c49a6673b5f4da5901f
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
