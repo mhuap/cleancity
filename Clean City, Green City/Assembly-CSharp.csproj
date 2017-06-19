@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ResetGame.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\StrikeManager.cs" />
      <Compile Include="Assets\Scripts\WasteGenerator.cs" />
      <Compile Include="Assets\Scripts\clickAndDrag.cs" />
