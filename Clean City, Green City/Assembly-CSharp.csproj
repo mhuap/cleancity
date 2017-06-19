@@ -46,16 +46,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Compost.cs" />
+     <Compile Include="Assets\Scripts\Recyclable.cs" />
      <Compile Include="Assets\Scripts\ResetGame.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\StrikeManager.cs" />
+     <Compile Include="Assets\Scripts\Trash.cs" />
+     <Compile Include="Assets\Scripts\Waste.cs" />
      <Compile Include="Assets\Scripts\WasteGenerator.cs" />
      <Compile Include="Assets\Scripts\clickAndDrag.cs" />
-     <Compile Include="Assets\Scripts\deleteCompost.cs" />
-     <Compile Include="Assets\Scripts\deleteRecyclable.cs" />
-     <Compile Include="Assets\Scripts\deleteTrash.cs" />
+     <Compile Include="Assets\Scripts\compostAndRecycle.cs" />
+     <Compile Include="Assets\Scripts\deleteWaste.cs" />
      <Compile Include="Assets\Scripts\timer.cs" />
+     <Compile Include="Assets\Scripts\wasteComponent.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
