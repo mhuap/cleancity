@@ -52,11 +52,11 @@ public class WasteGenerator : MonoBehaviour {
 				int rand = Random.Range (0, 2);
 				waste = new compostAndRecycle ();
 				if (rand == 0) {
-					// pick sprite from recyclable
+					// pick sprite from end of recyclable sprite array
 					int s = Random.Range(4, 6);
 					newSprite = recycleSprites [s];
 				} else {
-					// pick sprite from compost
+					// pick sprite from start of compost sprite array
 					int s = Random.Range(0, 3);
 					newSprite = compostSprites[s];
 				}
