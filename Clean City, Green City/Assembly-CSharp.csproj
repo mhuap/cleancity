@@ -54,13 +54,17 @@
      <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\StrikeManager.cs" />
      <Compile Include="Assets\Scripts\Trash.cs" />
+     <Compile Include="Assets\Scripts\TutorialBins.cs" />
+     <Compile Include="Assets\Scripts\UnSelectableWaste.cs" />
      <Compile Include="Assets\Scripts\Waste.cs" />
      <Compile Include="Assets\Scripts\WasteGenerator.cs" />
+     <Compile Include="Assets\Scripts\changeScene.cs" />
      <Compile Include="Assets\Scripts\clickAndDrag.cs" />
      <Compile Include="Assets\Scripts\compostAndRecycle.cs" />
      <Compile Include="Assets\Scripts\deleteWaste.cs" />
      <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Scripts\wasteComponent.cs" />
+     <None Include="Assets\Sprites\tick-cross\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
