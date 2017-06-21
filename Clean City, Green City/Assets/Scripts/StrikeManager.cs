@@ -7,6 +7,7 @@ public class StrikeManager : MonoBehaviour
 {
 
 	public static int strikes;
+	public string strikeOutText;
 	public GameObject gameOverText;
 	public GameObject restartText;
 	private bool restart;
@@ -25,7 +26,7 @@ public class StrikeManager : MonoBehaviour
 	{
 		text.text = "strikes: " + strikes;
 		if (strikes >= 3) {
-			strikeOut.text = "Game Over!";
+			strikeOut.text = strikeOutText;
 			gameOverText.SetActive (true);
 			restartText.SetActive (true);
 			restart = true;

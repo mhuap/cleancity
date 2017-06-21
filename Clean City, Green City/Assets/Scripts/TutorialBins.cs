@@ -44,7 +44,7 @@ public class TutorialBins : MonoBehaviour {
 	}
 
 	void Update(){
-		if (drop && Input.GetMouseButtonUp(0)) {
+		if (drop && Input.GetMouseButtonUp (0)) {
 			Cursor.visible = true;
 			sr.sprite = oldSprite;
 			Destroy (waste);
