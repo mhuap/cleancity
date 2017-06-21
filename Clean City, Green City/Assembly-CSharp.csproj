@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CityControl.cs" />
      <Compile Include="Assets\Scripts\Compost.cs" />
      <Compile Include="Assets\Scripts\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\Recyclable.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\UnSelectableWaste.cs" />
      <Compile Include="Assets\Scripts\Waste.cs" />
      <Compile Include="Assets\Scripts\WasteGenerator.cs" />
+     <Compile Include="Assets\Scripts\ZoomCam.cs" />
      <Compile Include="Assets\Scripts\changeScene.cs" />
      <Compile Include="Assets\Scripts\clickAndDrag.cs" />
      <Compile Include="Assets\Scripts\compostAndRecycle.cs" />
