@@ -20,27 +20,25 @@ public class UnSelectableWaste : MonoBehaviour {
 		if (n == numLeft) {
 			enable = true;
 		}
+
+		foreach (Touch touch in Input.touches) {
+			if (enable) {
+				if (touch.phase == TouchPhase.Began) {
+					// OnMouseDown
+					offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0));
+					offset.z = 0;
+					Cursor.visible = false;
+				} else if (touch.phase == TouchPhase.Moved) {
+					// OnMouseDrag
+					Vector3 screenPosition = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance);
+					Vector3 objectPos = Camera.main.ScreenToWorldPoint (screenPosition) + offset;
+					transform.position = objectPos;
+				} else if (touch.phase == TouchPhase.Ended) {
+					// OnMouseUp
+					Cursor.visible = true;
+				}
+			}
+		}
 		
-	}
-
-	void OnMouseDrag() {
-		if (enable) {
-			Vector3 screenPosition = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance);
-			Vector3 objectPos = Camera.main.ScreenToWorldPoint (screenPosition) + offset;
-
-			transform.position = objectPos;
-		}
-	}
-
-	void OnMouseDown(){
-		if (enable) {
-			offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0));
-			offset.z = 0;
-			Cursor.visible = false;
-		}
-	}
-
-	void OnMouseUp(){
-		Cursor.visible = true;
 	}
 }
