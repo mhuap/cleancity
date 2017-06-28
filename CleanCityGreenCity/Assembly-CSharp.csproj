@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9F5AC989-3BD0-D071-FB39-97D650F6C170}</ProjectGuid>
+    <ProjectGuid>{62E8DB0F-D634-41F3-EE07-79A90D336801}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CityControl.cs" />
      <Compile Include="Assets\Scripts\Compost.cs" />
+     <Compile Include="Assets\Scripts\ExitGame.cs" />
      <Compile Include="Assets\Scripts\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\Recyclable.cs" />
      <Compile Include="Assets\Scripts\ResetGame.cs" />
@@ -64,7 +65,6 @@
      <Compile Include="Assets\Scripts\clickAndDrag.cs" />
      <Compile Include="Assets\Scripts\compostAndRecycle.cs" />
      <Compile Include="Assets\Scripts\deleteWaste.cs" />
-     <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Scripts\wasteComponent.cs" />
      <None Include="Assets\Sprites\tick-cross\readme.txt" />
  <Reference Include="UnityEngine.Analytics">

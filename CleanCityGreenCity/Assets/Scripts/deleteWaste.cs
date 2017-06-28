@@ -33,4 +33,5 @@ public class deleteWaste : MonoBehaviour {
 		Cursor.visible = true;
 		Destroy(other.gameObject);
 	}
+		
 }

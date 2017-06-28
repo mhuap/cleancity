@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ResetGame : MonoBehaviour {
+public class ResetGame : MonoBehaviour
+{
 
+	private Button reset;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+		reset = GetComponent<Button> ();
+		reset.onClick.AddListener (() => Reset());
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown (KeyCode.R)) {
-			gameObject.SetActive (false);
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		}
+	public void Reset ()
+	{
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 	}
 }

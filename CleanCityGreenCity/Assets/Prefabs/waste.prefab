@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb894d3ae4b9451982eca592427ea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: {fileID: 1011152023165610, guid: 077405426784e4115982441026606ec2,
+  gameOverText: {fileID: 1340689605003998, guid: 4f65822d96b9d4903a5bb805d6a3e451,
     type: 2}
 --- !u!1001 &100100000
 Prefab:
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56cf458bb2007487f875d27e97bbde3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5872dc1f6663745beaf0d8cea18cf202, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

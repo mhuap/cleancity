@@ -1,0 +1,12 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="LoadLevel">
+			<method name="LoadStage"/>
+			<method name="LoadStage"/>
+		</type>
+		<type fullname="ExitGame">
+			<method name="ClickExit"/>
+			<method name="ClickExit"/>
+		</type>
+	</assembly>
+</linker>
