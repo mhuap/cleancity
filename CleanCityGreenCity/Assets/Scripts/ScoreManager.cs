@@ -4,29 +4,29 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
 
-	public static int score;        // The player's score
+	private static int wasteLeft;        // The player's score
 	public static int pointInc = 1;
 
 	Text text;                      // Reference to the Text component.
 
-	void Awake ()
+	void Start ()
 	{
 		// Set up the reference.
 		text = GetComponent <Text> ();
 
 		// Reset the score.
-		score = 0;
+		wasteLeft = WasteGenerator.Count;
 	}
 
 
 	void Update ()
 	{	if (!Game.status) {
 			// Set the displayed text to be the word "Score" followed by the score value.
-			text.text = "score: " + score;
+			text.text = "waste left: " + wasteLeft;
 		}
 	}
 
-	static public void IncScore(){
-		score += pointInc;
+	static public void Change (){
+		wasteLeft --;
 	}
 }
