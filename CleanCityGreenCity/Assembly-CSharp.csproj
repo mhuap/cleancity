@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\ExitGame.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\LoadLevel.cs" />
+     <Compile Include="Assets\Scripts\MapToLevel.cs" />
      <Compile Include="Assets\Scripts\Recyclable.cs" />
      <Compile Include="Assets\Scripts\ResetGame.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
