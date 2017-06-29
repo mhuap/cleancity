@@ -35,7 +35,7 @@ public class changeScene : MonoBehaviour {
 				}
 			} else {
 				// n == 0
-				SceneManager.LoadScene ("Level1");
+				SceneManager.LoadScene ("altLevel1");
 			}
 		}
 		

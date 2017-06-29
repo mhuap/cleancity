@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class LoadLevel : MonoBehaviour {
+public class LoadLevel : MonoBehaviour
+{
 
 	public EventSystem es;
 
-	void Start(){
+	void Start ()
+	{
 		es = EventSystem.current;
 	}
 
-	public void LoadStage()  {
-		SceneManager.LoadScene(es.currentSelectedGameObject.tag);
+	public void LoadStage ()
+	{
+		SceneManager.LoadScene (es.currentSelectedGameObject.tag);
 	}
 }
