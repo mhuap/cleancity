@@ -4,6 +4,7 @@ using System.Collections;
 public class WasteGenerator : MonoBehaviour {
 
 	public int count = 20;
+	private static int _count;
 	public float waitTime = 5f;
 	public int numCoords = 14;
 
@@ -15,14 +16,14 @@ public class WasteGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		_count = count;
 		StartCoroutine (Generate ());
 	
 
 	}
 
 	IEnumerator Generate(){
-		while (count > 0 && !Game.status) {
+		while (_count > 0 && !Game.status) {
 			Sprite newSprite;
 			Waste waste;
 			GameObject wasteObj;
@@ -68,9 +69,13 @@ public class WasteGenerator : MonoBehaviour {
 			oldSprite.sprite = newSprite;
 			yield return new WaitForSeconds (waitTime);
 			Instantiate (wasteObj, position, Quaternion.identity);
-			count--;
+			_count--;
 		}
 
+	}
+
+	public static int Count{
+		get { return _count;}
 	}
 			
 

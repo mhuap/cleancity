@@ -44,19 +44,24 @@ public class deleteWaste : MonoBehaviour {
 
 	void OnTriggerStay(){
 		if (Input.GetMouseButtonUp (0)) {
-			print ("hi");
 			drop = true;
+		}
+	}
+
+	void Update(){
+		if (drop) {
 			if (rPoint || cPoint || tPoint) {
 				newSprite = check;
-				ScoreManager.IncScore ();
 			} else {
 				newSprite = cross;
 				StrikeManager.Strike ();
 			}
 			Cursor.visible = true;
 			Destroy (waste);
+			ScoreManager.Change ();
 			StartCoroutine (ChangeSprite ());
-		} 
+		}
+		drop = false;
 	}
 
 	IEnumerator ChangeSprite(){
