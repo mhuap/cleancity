@@ -20,6 +20,5 @@ public class ExitGame : MonoBehaviour
 	{
 		// when button is pressed, game exits
 		Application.Quit ();
-		Debug.Log ("button was pressed");
 	}
 }
