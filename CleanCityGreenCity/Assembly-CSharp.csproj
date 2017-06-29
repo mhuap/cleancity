@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CityControl.cs" />
      <Compile Include="Assets\Scripts\Compost.cs" />
      <Compile Include="Assets\Scripts\ExitGame.cs" />
+     <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\Recyclable.cs" />
      <Compile Include="Assets\Scripts\ResetGame.cs" />
@@ -65,8 +66,15 @@
      <Compile Include="Assets\Scripts\clickAndDrag.cs" />
      <Compile Include="Assets\Scripts\compostAndRecycle.cs" />
      <Compile Include="Assets\Scripts\deleteWaste.cs" />
+     <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Scripts\wasteComponent.cs" />
      <None Include="Assets\Sprites\tick-cross\readme.txt" />
+     <None Include="Assets\gameicons\Spritesheet\sheet_white2x.xml" />
+     <None Include="Assets\gameicons\Spritesheet\sheet_black2x.xml" />
+     <None Include="Assets\gameicons\Spritesheet\sheet_black1x.xml" />
+     <None Include="Assets\gameicons\Spritesheet\sheet_white1x.xml" />
+     <None Include="Assets\UIpack\license.txt" />
+     <None Include="Assets\gameicons\license.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
