@@ -44,23 +44,8 @@ public class Game : MonoBehaviour {
 		text.text = strikeString;
 		End ();
 	}
-
-	/// <summary>
-	/// Gets or sets value indicating whether this <see cref="Game"/> is over.
-	/// </summary>
-	/// <value><c>true</c> if status; otherwise, <c>false</c>.</value>
+		
 	static public bool status{
 		get {return _status; }
 	}
-
-//	static GameObject FindObject(GameObject parent, string name)
-//	{
-//		Transform[] trs= parent.GetComponentsInChildren<Transform> (typeof(Transform), true);
-//		foreach(Transform t in trs){
-//			if(t.name == name){
-//				return t.gameObject;
-//			}
-//		}
-//		return null;
-//	}
 }

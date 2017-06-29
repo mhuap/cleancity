@@ -44,6 +44,7 @@ public class deleteWaste : MonoBehaviour {
 
 	void OnTriggerStay(){
 		if (Input.GetMouseButtonUp (0)) {
+			print ("hi");
 			drop = true;
 			if (rPoint || cPoint || tPoint) {
 				newSprite = check;
@@ -52,11 +53,10 @@ public class deleteWaste : MonoBehaviour {
 				newSprite = cross;
 				StrikeManager.Strike ();
 			}
-
+			Cursor.visible = true;
+			Destroy (waste);
 			StartCoroutine (ChangeSprite ());
-		} else {
-			drop = false;
-		}
+		} 
 	}
 
 	IEnumerator ChangeSprite(){
@@ -65,12 +65,5 @@ public class deleteWaste : MonoBehaviour {
 		sr.sprite = oldSprite;
 
 	}
-
-	void Update(){
-		if (drop) {
-			Cursor.visible = true;
-			Destroy (waste);
-		}
-		drop = false;
-	}
+		
 }

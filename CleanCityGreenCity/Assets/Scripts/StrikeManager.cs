@@ -8,7 +8,6 @@ public class StrikeManager : MonoBehaviour
 
 	public string strikeOutText;
 	private char x = 'ø';
-	private bool restart;
 	private static int strikes;
 
 	Text text; // strikes: counter text
@@ -25,14 +24,6 @@ public class StrikeManager : MonoBehaviour
 		if (strikes >= 3) {
 			Game.StrikeOut ( strikeOutText);
 			Game.End ();
-			restart = true;
-		}
-
-		if (restart) {
-			if (Input.GetKeyDown (KeyCode.R)) {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-			}
-
 		}
 	}
 
