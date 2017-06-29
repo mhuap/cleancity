@@ -6,10 +6,10 @@ public class TutorialBins : MonoBehaviour {
 
 	public Sprite cross;
 	public Sprite check;
-	public string binType = "Z";
 
 	private bool drop;
-	private List<string> bins =  new List<string> (new string[]{"C", "R", "T"});
+	private List<char> bins =  new List<char> (new char[]{'C', 'R', 'T'});
+	private char binType;
 	private SpriteRenderer sr;
 	private Sprite oldSprite;
 	private Sprite newSprite;
@@ -18,6 +18,7 @@ public class TutorialBins : MonoBehaviour {
 	void Start(){
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		oldSprite = sr.sprite;
+		binType = gameObject.tag [0];
 		if (!bins.Contains (binType)) {
 			throw new System.ArgumentException ("Invalid binType", "binType");
 		}
@@ -28,9 +29,9 @@ public class TutorialBins : MonoBehaviour {
 
 		waste = other.gameObject;
 		wasteComponent wc = waste.GetComponent<wasteComponent>();
-		bool rPoint = binType == "R" && wc.r;
-		bool cPoint = binType == "C" && wc.c;
-		bool tPoint = binType == "T" && wc.t;
+		bool rPoint = binType == 'R' && wc.r;
+		bool cPoint = binType == 'C' && wc.c;
+		bool tPoint = binType == 'T' && wc.t;
 
 		if (rPoint || cPoint || tPoint) {	
 			newSprite = check;
@@ -44,10 +45,13 @@ public class TutorialBins : MonoBehaviour {
 	}
 
 	void Update(){
-		if (drop && Input.GetMouseButtonUp (0)) {
-			Cursor.visible = true;
+		if (Input.GetMouseButtonUp (0)) {
+			if (drop) {
+				Cursor.visible = true;
+				Destroy (waste);
+			}
 			sr.sprite = oldSprite;
-			Destroy (waste);
+			drop = false;
 		}
 	}
 
