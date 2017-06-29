@@ -12,7 +12,6 @@ public class WasteGenerator : MonoBehaviour {
 	public Sprite[] recycleSprites; // 6 sprites
 	public Sprite[] trashSprites; // 5 sprites
 	public Sprite[] compostSprites; // 5 sprites
-	public GameObject gameOverText;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +22,7 @@ public class WasteGenerator : MonoBehaviour {
 	}
 
 	IEnumerator Generate(){
-		while (count > 0 && !gameOverText.activeInHierarchy) {
+		while (count > 0 && !Game.status) {
 			Sprite newSprite;
 			Waste waste;
 			GameObject wasteObj;
