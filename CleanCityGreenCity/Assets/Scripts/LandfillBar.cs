@@ -5,7 +5,7 @@ using UnityEngine;
 public class LandfillBar : MonoBehaviour {
 
 	public int fillNumber;
-	public int 
+
 	// Use this for initialization
 	void Start () {
 		

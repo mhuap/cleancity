@@ -54,6 +54,7 @@ public class TutorialBins : MonoBehaviour {
 			if (drop) {
 				Cursor.visible = true;
 				Destroy (waste);
+				changeSprite = false;
 			}
 			sr.sprite = oldSprite;
 			drop = false;
