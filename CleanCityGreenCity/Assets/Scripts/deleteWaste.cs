@@ -39,29 +39,30 @@ public class deleteWaste : MonoBehaviour {
 		rPoint = binType == 'R' && wc.r;
 		cPoint = binType == 'C' && wc.c;
 		tPoint = binType == 'T' && wc.t;
+		drop = true;
 
 	}
 
-	void OnTriggerStay(){
-		if (Input.GetMouseButtonUp (0)) {
-			drop = true;
-		}
+	void OnTriggerExit(){
+		drop = false;
 	}
 
 	void Update(){
-		if (drop) {
-			if (rPoint || cPoint || tPoint) {
-				newSprite = check;
-			} else {
-				newSprite = cross;
-				StrikeManager.Strike ();
+		if (Input.GetMouseButtonUp (0)) {
+			if (drop) {
+				if (rPoint || cPoint || tPoint) {
+					newSprite = check;
+				} else {
+					newSprite = cross;
+					StrikeManager.Strike ();
+				}
+				Cursor.visible = true;
+				Destroy (waste);
+				ScoreManager.Change ();
+				StartCoroutine (ChangeSprite ());
 			}
-			Cursor.visible = true;
-			Destroy (waste);
-			ScoreManager.Change ();
-			StartCoroutine (ChangeSprite ());
+			drop = false;
 		}
-		drop = false;
 	}
 
 	IEnumerator ChangeSprite(){

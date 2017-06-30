@@ -14,6 +14,7 @@ public class TutorialBins : MonoBehaviour {
 	private Sprite oldSprite;
 	private Sprite newSprite;
 	private GameObject waste;
+	private bool changeSprite;
 
 	void Start(){
 		sr = gameObject.GetComponent<SpriteRenderer> ();
@@ -44,6 +45,10 @@ public class TutorialBins : MonoBehaviour {
 
 	}
 
+	void OnTriggerStay (Collider other) {
+		changeSprite = true;
+	}
+
 	void Update(){
 		if (Input.GetMouseButtonUp (0)) {
 			if (drop) {
@@ -52,12 +57,17 @@ public class TutorialBins : MonoBehaviour {
 			}
 			sr.sprite = oldSprite;
 			drop = false;
+		} else if (Input.GetMouseButtonDown (0)) {
+			if (changeSprite) {
+				sr.sprite = newSprite;
+			}
 		}
 	}
 
 	void OnTriggerExit(){
 		sr.sprite = oldSprite;
 		drop = false;
+		changeSprite = false;
 	}
 		
 }
