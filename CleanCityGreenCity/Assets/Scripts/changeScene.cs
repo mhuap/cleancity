@@ -7,6 +7,7 @@ public class changeScene : MonoBehaviour {
 
 	public GameObject[] arrows;
 	public GameObject text;
+	public string sceneName = "NA";
 
 	private GameObject[] waste;
 	private int n;
@@ -35,7 +36,7 @@ public class changeScene : MonoBehaviour {
 				}
 			} else {
 				// n == 0
-				SceneManager.LoadScene ("altLevel1");
+				SceneManager.LoadScene (sceneName);
 			}
 		}
 		
