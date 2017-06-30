@@ -84,12 +84,26 @@ public class WasteGenerator : MonoBehaviour
 		get { return _count; }
 	}
 
-	void ChangeBoxColliderSize (Sprite sp)
+	void ChangeBoxColliderSize ()
 	{
-		BoxCollider bc = wastePrefab.GetComponent<BoxCollider> ();;
-		if (bc != null) {
-			bc.size = new Vector3 (1.0f, 1.0f, 1.0f);
-		}
+		SpriteRenderer compRenderer = GetComponent<SpriteRenderer> (); // sprite renderer for compost
+		SpriteRenderer recRenderer = GetComponent<SpriteRenderer> (); // sprite renderer for recyclables
+		SpriteRenderer trashRenderer = GetComponent<SpriteRenderer> (); // sprite rend. for trash 
+
+		compRenderer.sprite = compostSprites [Random.Range (0, compostSprites.Length)];
+		recRenderer.sprite = recycleSprites [Random.Range (0, recycleSprites.Length)];
+		trashRenderer.sprite = trashSprites [Random.Range (0, trashSprites.Length)];
+
+		BoxCollider compCollider = GetComponent<BoxCollider> (); // for compost
+		BoxCollider recCollider = GetComponent<BoxCollider> (); // for recyclables
+		BoxCollider trashCollider = GetComponent<BoxCollider> (); // for trash
+
+		compCollider.size = compRenderer.bounds.size;
+		recCollider.size = recRenderer.bounds.size;
+		trashCollider.size = trashRenderer.bounds.size;
+
+
+
 	}
 			
 
