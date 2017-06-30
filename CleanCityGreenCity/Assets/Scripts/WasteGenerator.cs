@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WasteGenerator : MonoBehaviour {
+public class WasteGenerator : MonoBehaviour
+{
 
 	public int count = 20;
 	private static int _count;
@@ -10,19 +11,24 @@ public class WasteGenerator : MonoBehaviour {
 
 	public GameObject wastePrefab;
 	public Vector3[] coords;
-	public Sprite[] recycleSprites; // 6 sprites
-	public Sprite[] trashSprites; // 5 sprites
-	public Sprite[] compostSprites; // 5 sprites
+	public Sprite[] recycleSprites;
+	// 6 sprites
+	public Sprite[] trashSprites;
+	// 5 sprites
+	public Sprite[] compostSprites;
+	// 5 sprites
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		_count = count;
 		StartCoroutine (Generate ());
 	
 
 	}
 
-	IEnumerator Generate(){
+	IEnumerator Generate ()
+	{
 		while (_count > 0 && !Game.status) {
 			Sprite newSprite;
 			Waste waste;
@@ -33,19 +39,19 @@ public class WasteGenerator : MonoBehaviour {
 
 			if (n == 0) {
 				// compost only
-				int s = Random.Range(0, 5);
+				int s = Random.Range (0, 5);
 				newSprite = compostSprites [s];
 				waste = new Compost ();
 			} else if (n == 1) {
 				// recyclable only
-				int s = Random.Range(0, 6);
+				int s = Random.Range (0, 6);
 				newSprite = recycleSprites [s];
 				waste = new Recyclable ();
 			} else if (n == 2) {
 				// trash only
-				int s = Random.Range(0, 5);
-				waste = new Trash();
-				newSprite = trashSprites[s];
+				int s = Random.Range (0, 5);
+				waste = new Trash ();
+				newSprite = trashSprites [s];
 			} else {
 				// n == 3
 				// compost and recyclables
@@ -53,12 +59,12 @@ public class WasteGenerator : MonoBehaviour {
 				waste = new compostAndRecycle ();
 				if (rand == 0) {
 					// pick sprite from end of recyclable sprite array
-					int s = Random.Range(4, 6);
+					int s = Random.Range (4, 6);
 					newSprite = recycleSprites [s];
 				} else {
 					// pick sprite from start of compost sprite array
-					int s = Random.Range(0, 3);
-					newSprite = compostSprites[s];
+					int s = Random.Range (0, 3);
+					newSprite = compostSprites [s];
 				}
 			}
 			wasteObj = wastePrefab;
@@ -74,8 +80,16 @@ public class WasteGenerator : MonoBehaviour {
 
 	}
 
-	public static int Count{
-		get { return _count;}
+	public static int Count {
+		get { return _count; }
+	}
+
+	void ChangeBoxColliderSize (Sprite sp)
+	{
+		BoxCollider bc = wastePrefab.GetComponent<BoxCollider> ();;
+		if (bc != null) {
+			bc.size = new Vector3 (1.0f, 1.0f, 1.0f);
+		}
 	}
 			
 
