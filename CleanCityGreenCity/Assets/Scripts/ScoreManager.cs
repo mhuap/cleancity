@@ -20,9 +20,13 @@ public class ScoreManager : MonoBehaviour {
 
 
 	void Update ()
-	{	if (!Game.status) {
+	{
+		if (!Game.status) {
 			// Set the displayed text to be the word "Score" followed by the score value.
 			text.text = "waste left: " + wasteLeft;
+			if (wasteLeft == 0) {
+				Game.End ();
+			}
 		}
 	}
 

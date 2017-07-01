@@ -9,7 +9,7 @@ public class LandfillBar : MonoBehaviour {
 	public Sprite[] dangerSprites;
 	public int numBars = 10;
 
-	private static int prevFillNum = 0;
+	private static int prevFillNum;
 	private static int _fillNumber;
 	private int oldNum;
 	private Sprite[] setSprites;
@@ -22,6 +22,7 @@ public class LandfillBar : MonoBehaviour {
 
 	void Awake(){
 		_fillNumber = 4;
+		prevFillNum = 0;
 	}
 
 	// Use this for initialization

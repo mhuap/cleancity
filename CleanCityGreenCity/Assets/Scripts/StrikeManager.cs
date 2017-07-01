@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StrikeManager : MonoBehaviour
 {
-
-	public string strikeOutText;
-	private char x = 'ø';
 	private static int strikes;
 
 	Text text; // strikes: counter text
@@ -15,21 +12,14 @@ public class StrikeManager : MonoBehaviour
 	void Awake ()
 	{
 		strikes = 0;
-		text = GetComponent <Text> ();
 	}
 
-	void Update ()
-	{
-		text.text = "strikes: " + new string(x, strikes);
-		if (strikes >= 3) {
-			Game.StrikeOut ( strikeOutText);
-			Game.End ();
-		}
+	void Start(){
+		strikes = 0;
 	}
+		
 
 	static public void Strike(){
-		if (strikes < 3) {
 			strikes++;
-		}
 	}
 }
