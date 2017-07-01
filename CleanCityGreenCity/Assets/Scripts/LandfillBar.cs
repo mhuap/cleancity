@@ -9,9 +9,8 @@ public class LandfillBar : MonoBehaviour {
 	public Sprite[] dangerSprites;
 	public int numBars = 10;
 
-	private static int prevFillNum;
-	private static int _fillNumber;
-	private int oldNum;
+	private int prevFillNum;
+	private int _fillNumber;
 	private Sprite[] setSprites;
 	private bool leftBlank;
 	private bool rightBlank;
@@ -20,13 +19,13 @@ public class LandfillBar : MonoBehaviour {
 	private Transform barRightEnd;
 	private Transform[] barPieces;
 
-	void Awake(){
-		_fillNumber = 4;
-		prevFillNum = 0;
-	}
-
 	// Use this for initialization
 	void Start () {
+		prevFillNum = LandfillStats.prev;
+		_fillNumber = LandfillStats.curr + prevFillNum;
+
+		print ("prev: " + prevFillNum);
+		print ("fill: " + _fillNumber);
 		// fillNumber
 		if (_fillNumber < 0 || _fillNumber > 12) {
 			throw new UnityException ();
@@ -58,6 +57,8 @@ public class LandfillBar : MonoBehaviour {
 		GenEnd ('L');
 		GenMiddle ();
 		GenEnd ('R');
+
+		LandfillStats.End ();
 	}
 
 	void SetSprites(){
@@ -124,9 +125,5 @@ public class LandfillBar : MonoBehaviour {
 		}
 			
 	}
-
-	public static void Inc(){
-		prevFillNum = _fillNumber;
-		_fillNumber++;
-	}
+		
 }

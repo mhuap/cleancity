@@ -55,7 +55,7 @@ public class deleteWaste : MonoBehaviour {
 				} else {
 					newSprite = cross;
 					StrikeManager.Strike ();
-					LandfillBar.Inc ();
+					LandfillStats.Inc ();
 				}
 				Cursor.visible = true;
 				Destroy (waste);
