@@ -19,6 +19,6 @@ public class StartGame : MonoBehaviour
 	// Update is called once per frame
 	public void ClickStart ()
 	{
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex - 1);
+		SceneManager.LoadScene ("Tutorial");
 	}
 }
