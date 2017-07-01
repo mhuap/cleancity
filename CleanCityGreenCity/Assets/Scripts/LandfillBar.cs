@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class LandfillBar : MonoBehaviour {
 
-	public int fillNum = 5;
 	public Sprite[] blankSprites;
 	public Sprite[] fillSprites;
 	public Sprite[] dangerSprites;
 	public int numBars = 10;
 
+	private static int prevFillNum = 0;
 	private static int _fillNumber;
 	private int oldNum;
 	private Sprite[] setSprites;
@@ -27,7 +27,6 @@ public class LandfillBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// fillNumber
-		_fillNumber = fillNum;
 		if (_fillNumber < 0 || _fillNumber > 12) {
 			throw new UnityException ();
 		}
@@ -126,7 +125,7 @@ public class LandfillBar : MonoBehaviour {
 	}
 
 	public static void Inc(){
-		
+		prevFillNum = _fillNumber;
 		_fillNumber++;
 	}
 }
