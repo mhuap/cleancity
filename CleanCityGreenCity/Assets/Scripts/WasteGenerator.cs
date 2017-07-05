@@ -41,12 +41,20 @@ public class WasteGenerator : MonoBehaviour
 				// compost only
 				int s = Random.Range (0, 5);
 				newSprite = compostSprites [s];
-				waste = new Compost ();
+				if (s < 3) {
+					waste = new compostAndRecycle ();
+				} else {
+					waste = new Compost ();
+				}
 			} else if (n == 1) {
 				// recyclable only
 				int s = Random.Range (0, 6);
 				newSprite = recycleSprites [s];
-				waste = new Recyclable ();
+				if (s >= 4) {
+					waste = new compostAndRecycle ();
+				} else {
+					waste = new Recyclable ();
+				}
 			} else if (n == 2) {
 				// trash only
 				int s = Random.Range (0, 5);
