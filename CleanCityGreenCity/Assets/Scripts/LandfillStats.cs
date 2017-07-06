@@ -31,4 +31,10 @@ public class LandfillStats : MonoBehaviour {
 		_curr = 0;
 		start = 0;
 	}
+
+	static public void GameOver(){
+		start = 3;
+		_prev = 0;
+		_curr = 0;
+	}
 }

@@ -8,6 +8,7 @@ public class LandfillBar : MonoBehaviour {
 	public Sprite[] fillSprites;
 	public Sprite[] dangerSprites;
 	public int numBars = 10;
+	public GameObject button;
 
 	private int prevFillNum;
 	private int _fillNumber;
@@ -18,6 +19,7 @@ public class LandfillBar : MonoBehaviour {
 	private Transform barLeftEnd;
 	private Transform barRightEnd;
 	private Transform[] barPieces;
+	private string nextScene;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +29,16 @@ public class LandfillBar : MonoBehaviour {
 		print ("prev: " + prevFillNum);
 		print ("fill: " + _fillNumber);
 		// fillNumber
-		if (_fillNumber < 0 || _fillNumber > 12) {
+		if (_fillNumber < 0) {
 			throw new UnityException ();
+		} else if (_fillNumber >= 12) {
+			_fillNumber = 12;
+			nextScene = "GameOver";
+		} else {
+			nextScene = "Map";
 		}
+
+		button.tag = nextScene;
 
 		// Ends of bar
 		Transform t = this.transform;
