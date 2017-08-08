@@ -17,7 +17,7 @@ public class MapToLevel : MonoBehaviour {
 
 	void OnMouseUp(){
 		if (change) {
-			SceneManager.LoadScene(this.tag);
+			SceneManager.LoadScene("LandfillScene");
 		}
 		change = false;
 	}

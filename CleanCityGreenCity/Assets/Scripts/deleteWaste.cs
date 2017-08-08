@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deleteWaste : MonoBehaviour {
+public class deleteWaste : MonoBehaviour
+{
 
 	public Sprite cross;
 	public Sprite check;
 	public float time = 0.5f;
 
-	private List<char> bins =  new List<char> (new char[]{'C', 'R', 'T'});
+	private List<char> bins = new List<char> (new char[]{ 'C', 'R', 'T' });
 	private char binType;
 	private SpriteRenderer sr;
 	private Sprite oldSprite;
@@ -18,10 +19,16 @@ public class deleteWaste : MonoBehaviour {
 	private bool rPoint;
 	private bool cPoint;
 	private bool tPoint;
-
+	public AudioSource correctAudio;
+	public AudioSource wrongAudio;
+	public AudioClip correctClip;
+	public AudioClip wrongClip;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		correctAudio.clip = correctClip;
+		wrongAudio.clip = wrongClip;
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		oldSprite = sr.sprite;
 		binType = gameObject.tag [0];
@@ -31,11 +38,12 @@ public class deleteWaste : MonoBehaviour {
 			
 	}
 
-	void OnTriggerEnter (Collider other){
+	void OnTriggerEnter (Collider other)
+	{
 		// other is waste being dragged into bins
 
 		waste = other.gameObject;
-		wasteComponent wc = other.gameObject.GetComponent<wasteComponent>();
+		wasteComponent wc = other.gameObject.GetComponent<wasteComponent> ();
 		rPoint = binType == 'R' && wc.r;
 		cPoint = binType == 'C' && wc.c;
 		tPoint = binType == 'T' && wc.t;
@@ -43,19 +51,23 @@ public class deleteWaste : MonoBehaviour {
 
 	}
 
-	void OnTriggerExit(){
+	void OnTriggerExit ()
+	{
 		drop = false;
 	}
 
-	void Update(){
+	void Update ()
+	{
 		if (Input.GetMouseButtonUp (0)) {
 			if (drop) {
 				if (rPoint || cPoint || tPoint) {
 					newSprite = check;
+					correctAudio.Play ();
 				} else {
 					newSprite = cross;
 					StrikeManager.Strike ();
 					LandfillStats.Inc ();
+					wrongAudio.Play ();
 				}
 				Cursor.visible = true;
 				Destroy (waste);
@@ -66,7 +78,8 @@ public class deleteWaste : MonoBehaviour {
 		}
 	}
 
-	IEnumerator ChangeSprite(){
+	IEnumerator ChangeSprite ()
+	{
 		sr.sprite = newSprite;
 		yield return new WaitForSecondsRealtime (time);
 		sr.sprite = oldSprite;
