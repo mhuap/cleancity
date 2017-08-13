@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\OkayButtonForLevel.cs" />
      <Compile Include="Assets\Scripts\BackgroundMusic.cs" />
      <Compile Include="Assets\Scripts\BackToGame.cs" />
      <Compile Include="Assets\Scripts\changeScene.cs" />
@@ -60,7 +61,6 @@
      <Compile Include="Assets\Scripts\compostAndRecycle.cs" />
      <Compile Include="Assets\Scripts\deleteWaste.cs" />
      <Compile Include="Assets\Scripts\ExitGame.cs" />
-     <Compile Include="Assets\Scripts\FadeAway.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\GameOverSound.cs" />
      <Compile Include="Assets\Scripts\LandfillBar.cs" />
@@ -70,12 +70,15 @@
      <Compile Include="Assets\Scripts\OkayButtonScript.cs" />
      <Compile Include="Assets\Scripts\Recyclable.cs" />
      <Compile Include="Assets\Scripts\RefPageButton.cs" />
+     <Compile Include="Assets\Scripts\ReplayIntro.cs" />
      <Compile Include="Assets\Scripts\ResetGame.cs" />
      <Compile Include="Assets\Scripts\ResetWholeGame.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\SkipIntro.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\StartLevel.cs" />
      <Compile Include="Assets\Scripts\StrikeManager.cs" />
+     <Compile Include="Assets\Scripts\TextAnimation.cs" />
      <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Scripts\Trash.cs" />
      <Compile Include="Assets\Scripts\TutorialBins.cs" />
